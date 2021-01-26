@@ -13,4 +13,4 @@ catkin build
 
 
 ## Run
-Set laserscan topic in the _config/params.yaml_ file and play recorded rosbag(/live data) along with launching _launch/run.launch_. By default, the launch file runs a demo rosbag, but can be shutdown by setting __enable_rosbag_demo__ argument to false in launch file. The topic __/circleOdom__ publishes detected circle odometry.
+Set laserscan topic in the _config/params.yaml_ file and play recorded rosbag(/live data) along with launching _launch/run.launch_. By default, the launch file runs a demo rosbag, but can be shutdown by setting __enable_rosbag_demo__ argument to false in launch file. The topic __/circleOdom__ publishes detected circle odometry and __/detectedCirle__ holds the detected circle information.
