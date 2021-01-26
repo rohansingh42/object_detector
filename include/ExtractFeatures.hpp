@@ -34,6 +34,7 @@ class ExtractFeatures {
     int fitMethod;    //0 - hypercircle, 1 - LM
     double maxVelX;
     double maxVelY;
+    std::string laserScanTopic;
 
   public:
 

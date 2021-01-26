@@ -23,8 +23,9 @@ ExtractFeatures::ExtractFeatures(ros::NodeHandle& nh) {
     nh.param<int>("/fitMethod", fitMethod, 0);
     nh.param<double>("/maxVelX", maxVelX, 0);
     nh.param<double>("/maxVelY", maxVelY, 0);
+    nh.param<std::string>("/laserScanTopic", laserScanTopic, "/laser_horizontal_front");
 
-    scanSub = nodeHandle.subscribe<sensor_msgs::LaserScan>("/laser_horizontal_front", 100, &ExtractFeatures::ScanCallback, this);
+    scanSub = nodeHandle.subscribe<sensor_msgs::LaserScan>(laserScanTopic, 100, &ExtractFeatures::ScanCallback, this);
 
     circleOdomSub = nodeHandle.subscribe<nav_msgs::Odometry>("/circleOdom", 100, &ExtractFeatures::OdomCallback, this);
 
