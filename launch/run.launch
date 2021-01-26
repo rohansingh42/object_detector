@@ -1,6 +1,13 @@
 <launch>
 
+    <arg name="enable_rosbag_demo" default="true"/>
+
     <rosparam file="$(find object_detector)/config/params.yaml" command="load" />
+  
+    <node if="$(arg enable_rosbag_demo)" pkg="rosbag" name="detection_demo" type="play" output="screen" args="--clock --loop $(find object_detector)/resources/turning.bag">
+        <param name="use_sim_time" value="true"/>
+    </node>
+
 
     <node pkg="object_detector" type="extract_features_node" name="extract_features_node" output="screen">
     </node>

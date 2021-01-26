@@ -1,5 +1,5 @@
 lambda: 90
-abdRatio: 2
+abdRatio: 1.5
 minSegPts: 10
 fitMethod: 0
 laserScanTopic: /laser_horizontal_front
