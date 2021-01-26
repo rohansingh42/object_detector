@@ -1,0 +1,11 @@
+<launch>
+
+    <rosparam file="$(find object_detector)/config/params.yaml" command="load" />
+
+    <node pkg="object_detector" type="extract_features_node" name="extract_features_node" output="screen">
+    </node>
+
+    <node pkg="object_detector" type="track_feature_node" name="track_feature_node" output="screen">
+    </node>
+
+</launch>
